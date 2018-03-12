@@ -1,0 +1,171 @@
+html,
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #434343;
+  text-transform: uppercase;
+  margin-top: 38px;
+  margin-bottom: 45px;
+}
+
+.form-control {
+  height: 50px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: solid 1px #d1d1d6;
+
+  &:focus {
+    background-color: #ffffff;
+    border: solid 1px #d1d1d6;
+    color: #000000;
+    box-shadow: none;
+  }
+}
+
+.btn-search {
+  width: 56px;
+  border-radius: 5px;
+  background: #4cd964 url(./assets/images/turbo-arrow.svg) no-repeat center;
+}
+
+.thumb-box {
+  height: 81px;
+  img {
+    width: 100%;
+    height: 81px;
+  }
+  @media(min-width: 767px) {
+    height: 153px;
+    img {
+      width: 100%;
+      height: 153px;
+    }
+  }
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #434343;
+}
+
+.duration {
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8e8e93;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -2px;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.dropdown {
+  margin-top: 41px;
+  .dropdown-menu {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    border: solid 1px #0082d5;
+
+    .dropdown-item {
+      color: #0082d5;
+      font-weight: 500;
+    }
+  }
+  .btn-dropdown {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px #0082d5;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0082d5;
+    text-align: left;
+
+    &:focus {
+      border: solid 1px #0082d5;
+      box-shadow: none;
+    }
+  }
+}
+
+.txt-intro {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.47;
+  letter-spacing: normal;
+  text-align: center;
+  color: #434343;
+  margin-top: 20px;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  /* margin-left: 35px; */
+  /* vertical-align: .255em; */
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+  position: absolute;
+  right: 15px;
+  top: 46%;
+}
+
+.close-icon {
+  width: 16px;
+  height: 16px;
+  background-size: 100%;
+  position: absolute;
+  background-image: url(./assets/images/turbo-close.svg);
+  top: 17px;
+  z-index: 1000;
+  right: 65px;
+  transition: all 20ms;
+}

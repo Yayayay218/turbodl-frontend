@@ -14,23 +14,38 @@ export default class Parse {
     getMatches(data) {
         var query = '';
         if (data.id !== null)
-            query = `id=${data.id}`;
+            query = `_id=${data.id}`;
         else
             query = `type=${data.type}`;
         return this._fetch({
             method: 'GET',
-            url: '/matches?' + query,
+            url: '/matches?' + query + '&sort=-createdAt',
         }).then(response => response.json());
     }
 
     getLivestreams(data) {
-        var query='';
+        var query = '';
         if (data.id !== null)
             query = `id=${data.id}`;
-        else query=''
+        else query = 'status=2'
         return this._fetch({
             method: 'GET',
-            url: '/livestreams?'+query,
+            url: '/livestreams?' + query + '&sort=-createdAt',
+        }).then(response => response.json());
+    }
+
+    getChannel(data) {
+        return this._fetch({
+            method: 'GET',
+            url: '/livestreams/' + data.id + '/' + data.channelId,
+        }).then(response => response.json());
+    }
+
+    postUrl(data) {
+        return this._fetch({
+            method: 'POST',
+            url: '/videos',
+            body: data
         }).then(response => response.json());
     }
 

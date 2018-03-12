@@ -4,7 +4,6 @@ import Api from '../services/dataService'
 
 export function* getMatches({data}) {
     try {
-        console.log(data)
         const ParseApi = new Api(null);
         const response = yield call([ParseApi, ParseApi.getMatches], data);
         yield put(Actions.getMatchesSuccess(response));
@@ -15,7 +14,6 @@ export function* getMatches({data}) {
 }
 
 export function* getLivestreams({data}) {
-    console.log(data)
     try {
         const ParseApi = new Api(null);
         const response = yield call([ParseApi, ParseApi.getLivestreams], data);
@@ -23,5 +21,35 @@ export function* getLivestreams({data}) {
 
     } catch (err) {
         yield put(Actions.getLivestreamFailure(err));
+    }
+}
+
+export function* getChannel({data}) {
+    try {
+        const ParseApi = new Api(null);
+        const response = yield call([ParseApi, ParseApi.getChannel], data);
+        if(response && !response.success) {
+            yield put(Actions.getChannelFailure(response.message));
+            return;
+        }
+        yield put(Actions.getChannelSuccess(response));
+
+    } catch (err) {
+        yield put(Actions.getChannelFailure(err));
+    }
+}
+
+export function* postUrl({data}) {
+    try {
+        const ParseApi = new Api(null);
+        const response = yield call([ParseApi, ParseApi.postUrl], data);
+        if(response && response.error) {
+            yield put(Actions.postUrlFailure(response));
+            return;
+        }
+        yield put(Actions.postUrlSuccess(response));
+
+    } catch (err) {
+        yield put(Actions.postUrlFailure(err));
     }
 }

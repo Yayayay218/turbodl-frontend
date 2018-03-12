@@ -9,6 +9,7 @@ export const INITIAL_STATE = Immutable({
     pages: 1,
     total: 0,
     current: {},
+    channel:{},
     isFetching: false,
     isFull: false,
     error: null,
@@ -53,14 +54,62 @@ const setCurrentChannel = (state, action) =>
         currentChannel: action.data
     });
 
+const getChannel = (state, action) =>
+    state.merge({
+        channelFetching: true,
+        channelFetched: false
+    })
+
+const getChannelSuccess = (state, action) =>
+    state.merge({
+        channel: action.response,
+        channelFetching: false,
+        channelFetched: true
+    })
+
+const getChannelFailure = (state, action) =>
+    state.merge({
+        channelFetching: false,
+        channelFetched: false,
+        err: action.errCode.message
+    })
+
+const postUrl = (state, action) =>
+    state.merge({
+        urlPosting: true,
+        urlPosted: false,
+        err: null,
+        url: action.data
+    })
+
+const postUrlSuccess = (state, action) =>
+    state.merge({
+        urlPosting: false,
+        urlPosted: true,
+        err: null,
+        data: action.response.data
+    })
+
+const postUrlFailure = (state, action) =>
+    state.merge({
+        urlPosting: false,
+        urlPosted: false,
+        err: true
+    })
 
 const ACTION_HANDLERS = {
     [Types.GET_LIVESTREAM]: request,
     [Types.GET_LIVESTREAM_SUCCESS]: success,
     [Types.GET_LIVESTREAM_FAILURE]: failure,
 
-
     [Types.SET_CHANNEL]: setCurrentChannel,
+    [Types.GET_CHANNEL]: getChannel,
+    [Types.GET_CHANNEL_SUCCESS]: getChannelSuccess,
+    [Types.GET_CHANNEL_FAILURE]: getChannelFailure,
+
+    [Types.POST_URL]: postUrl,
+    [Types.POST_URL_SUCCESS]: postUrlSuccess,
+    [Types.POST_URL_FAILURE]: postUrlFailure
 };
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS);

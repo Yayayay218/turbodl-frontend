@@ -11,6 +11,14 @@ const getLivestreamFailure = (errCode) => createAction(Types.GET_LIVESTREAM_FAIL
 
 const setChannel = (data) => createAction(Types.SET_CHANNEL, {data});
 
+const getChannel = (data) => createAction(Types.GET_CHANNEL, {data});
+const getChannelSuccess = (response) => createAction(Types.GET_CHANNEL_SUCCESS, {response});
+const getChannelFailure = (errCode) => createAction(Types.GET_CHANNEL_FAILURE, {errCode});
+
+const postUrl = (data) => createAction(Types.POST_URL, {data})
+const postUrlSuccess = (response) => createAction(Types.POST_URL_SUCCESS, {response})
+const postUrlFailure = (errCode) => createAction(Types.POST_URL_FAILURE, {errCode})
+
 export default {
     getMatches,
     getMatchesSuccess,
@@ -20,5 +28,13 @@ export default {
     getLivestreamSuccess,
     getLivestreamFailure,
 
-    setChannel
+    setChannel,
+
+    getChannel,
+    getChannelSuccess,
+    getChannelFailure,
+
+    postUrl,
+    postUrlSuccess,
+    postUrlFailure
 }
