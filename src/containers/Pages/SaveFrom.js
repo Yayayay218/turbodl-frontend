@@ -95,8 +95,8 @@ class SaveFrom extends Component {
                                     {
                                         livestreams.formats.map((item, key) => (
                                             <a className="dropdown-item" href={item.url} download
-                                               key={key}>{item.container} {item.resolution} {
-                                                   item.resolution === '1080p' && '(Muted)'
+                                               key={key}>{item.ext} {item.format_note} {
+                                                   item.format_note === '1080p' && '(Muted)'
                                             }</a>
                                         ))
                                     }
@@ -111,7 +111,9 @@ class SaveFrom extends Component {
 
                         <p className="txt-intro">2. Select video quality, and wait until the video is played </p>
 
-                        <p className="txt-intro">3. ‘Download’ button will show up, then just tap that button to start downloading</p>
+                        <p className="txt-intro">3. “Download” button will show up, then just tap that button.
+                            <br/>
+                            If the “Download” button still doesn’t show up, please close the app and reopen it to try again</p>
 
                         <p className="txt-intro" style={{fontWeight: 'bold'}}>* This website is not related to the app
                             <br/>
@@ -120,7 +122,6 @@ class SaveFrom extends Component {
                             on Appstore</p>
                     </div>
                 </div>
-
             </div>
         )
     }

@@ -2,53 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd286d3b-be8d-4ed9-b6f8-3afa78a30fbb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/App.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/clear.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/turbo-arrow.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/turbo-close.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/containers/Pages/Free.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/containers/Pages/SaveFrom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/favicon.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/group-3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/icons/arrow-channel.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/icons/arrow-down.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/icons/arrow.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/icons/icon-play.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/icons/live.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lavi-logo.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/lavi-meta-image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/actions/Creators.js" afterPath="$PROJECT_DIR$/src/actions/Creators.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/Types.js" afterPath="$PROJECT_DIR$/src/actions/Types.js" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/group-3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/icons/arrow-channel.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/icons/arrow-down.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/icons/arrow.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/icons/icon-play.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/icons/live.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/lavi-logo.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/LiveBox.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Match.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/config/AppSetting.js" afterPath="$PROJECT_DIR$/src/config/AppSetting.js" />
-      <change beforePath="$PROJECT_DIR$/src/config/ReduxPersist.js" afterPath="$PROJECT_DIR$/src/config/ReduxPersist.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/App.js" afterPath="$PROJECT_DIR$/src/containers/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Matches/ListMatches.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Matches/LiveStream.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Matches/LivesteamDetail.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Matches/MatchDetail.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Pages/About.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Pages/DMCA.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Pages/Privacy.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Root.js" afterPath="$PROJECT_DIR$/src/containers/Root.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/LivestreamReducer.js" afterPath="$PROJECT_DIR$/src/reducers/LivestreamReducer.js" />
-      <change beforePath="$PROJECT_DIR$/src/saga/MatchSaga.js" afterPath="$PROJECT_DIR$/src/saga/MatchSaga.js" />
-      <change beforePath="$PROJECT_DIR$/src/saga/index.js" afterPath="$PROJECT_DIR$/src/saga/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/services/dataService.js" afterPath="$PROJECT_DIR$/src/services/dataService.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Pages/SaveFrom.js" afterPath="$PROJECT_DIR$/src/containers/Pages/SaveFrom.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,73 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SaveFrom.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SaveFrom.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Pages/SaveFrom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2970">
-              <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppSetting.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/config/AppSetting.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+              <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchSaga.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/saga/MatchSaga.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LivestreamReducer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/LivestreamReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2820">
-              <caret line="96" column="17" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReduxPersist.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/ReduxPersist.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5070">
-              <caret line="169" column="22" lean-forward="false" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="22" />
+            <state relative-caret-position="960">
+              <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -214,13 +121,13 @@
         <option value="$PROJECT_DIR$/src/containers/Root.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.less" />
         <option value="$PROJECT_DIR$/src/config/ReduxPersist.js" />
         <option value="$PROJECT_DIR$/src/saga/MatchSaga.js" />
         <option value="$PROJECT_DIR$/src/reducers/LivestreamReducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/Pages/SaveFrom.js" />
         <option value="$PROJECT_DIR$/src/config/AppSetting.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/containers/Pages/SaveFrom.js" />
       </list>
     </option>
   </component>
@@ -264,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,40 +187,42 @@
               <item name="turbodl-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="turbodl-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="turbodl-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="turbodl-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="saga" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../nightwatch" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/images" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/assets" />
-      <recent name="$PROJECT_DIR$/public/assets/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/containers" />
       <recent name="$PROJECT_DIR$/src/images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/public/assets" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -417,28 +325,35 @@
       <workItem from="1520825198716" duration="3344000" />
       <workItem from="1520841266348" duration="32000" />
       <workItem from="1520841304032" duration="1421000" />
-      <workItem from="1520847377597" duration="3000" />
+      <workItem from="1520847377597" duration="800000" />
+      <workItem from="1520903908622" duration="8000" />
+      <workItem from="1520925715957" duration="677000" />
+      <workItem from="1520992665848" duration="793000" />
+      <workItem from="1521014035229" duration="1626000" />
+      <workItem from="1521076574644" duration="315000" />
+      <workItem from="1521081592007" duration="1280000" />
+      <workItem from="1521147790734" duration="145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191844000" />
+    <option name="totallyTimeSpent" value="197485000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="648" y="24" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13600422" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25262055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -462,7 +377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/images/icons/icon-play.svg" />
     <entry file="file://$PROJECT_DIR$/build/service-worker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -478,16 +392,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/images/group-3.png" />
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/src/navigation/HeaderNav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -495,11 +400,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/src/containers/Pages/Privacy.js" />
     <entry file="file://$PROJECT_DIR$/src/services/RehydrationServices.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -608,13 +509,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -660,23 +555,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5070">
           <caret line="169" column="22" lean-forward="false" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/ReduxPersist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -689,7 +571,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/ReduxPersist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -701,20 +589,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Pages/SaveFrom.js">
+    <entry file="file://$PROJECT_DIR$/src/config/AppSetting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/AppSetting.js">
+    <entry file="file://$PROJECT_DIR$/public/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Pages/SaveFrom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
           <folding />
         </state>
       </provider>
