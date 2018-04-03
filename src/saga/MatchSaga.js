@@ -53,3 +53,18 @@ export function* postUrl({data}) {
         yield put(Actions.postUrlFailure(err));
     }
 }
+
+export function* search({data}) {
+    try {
+        const ParseApi = new Api(null, true);
+        const response = yield call([ParseApi, ParseApi.search], data);
+        if(response && response.error) {
+            yield put(Actions.searchFailure(response.error));
+            return;
+        }
+        yield put(Actions.searchSuccess(response));
+
+    } catch (err) {
+        yield put(Actions.searchFailure(err));
+    }
+}

@@ -3,12 +3,12 @@ import _ from 'lodash'
 
 export default class Parse {
 
-    constructor(token) {
+    constructor(token, root = false) {
         // this._applicationId = config.PARSE_ID;
         // this._restAPIKey = config.PARSE_API_KEY;
         // this._masterKey = null;
 
-        this.API_BASE_URL = config.URL;
+        this.API_BASE_URL = !root ? config.URL: '';
     }
 
     getMatches(data) {
@@ -46,6 +46,13 @@ export default class Parse {
             method: 'POST',
             url: '/videos',
             body: data
+        }).then(response => response.json());
+    }
+
+    search({q, maxResults}) {
+        return this._fetch({
+            method: 'GET',
+            url: `https://www.googleapis.com/youtube/v3/search?${q}&part=snippet&${maxResults}&key=${config.SECRET_KEY}&type=video`,
         }).then(response => response.json());
     }
 

@@ -2,19 +2,19 @@ import React from 'react'
 
 export const Free = () => {
     return (
-        <div></div>
+        <div>Free</div>
     )
 }
 
 export const Pro = () => {
     return (
-        <div></div>
+        <div>Pro</div>
     )
 }
 
 export const OurApp = () => {
     return (
-        <div></div>
+        <div>Out App</div>
     )
 }
 
