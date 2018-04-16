@@ -5,25 +5,32 @@ import createReducer from './CreateReducer';
 export const INITIAL_STATE = Immutable({
     data: [],
     current: {},
-    channel:{},
+    channel: {},
     fetching: false,
     fetched: false,
     error: null,
+    nextPage: null
 });
 
-const search = (state, action) =>
-    state.merge({
-        err: null,
-        fetching: true,
-        fetched: false,
-    })
+const search = (state, action) => {
+    return (
+        state.merge({
+            err: null,
+            fetching: true,
+            fetched: false,
+            data: action.data.loadMore ? [...state.data] : []
+        })
+    )
+}
+
 
 const searchSuccess = (state, action) =>
     state.merge({
         err: null,
         fetching: false,
         fetched: true,
-        data: action.response.items
+        data: [...state.data, ...action.response.items],
+        nextPage: action.response.nextPageToken
     })
 
 const searchFailure = (state, action) =>

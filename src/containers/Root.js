@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 import {Provider} from 'react-redux'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom'
 import configureStore from '../store/Store';
-import SaveFrom from '../containers/Pages/SaveFrom'
-import {Free, Pro, OurApp} from "./Pages/Free";
-import Search from './Pages/Searches/Search'
 import Watch from './Pages/Watches/Watch'
-import Home from './Pages/Home'
-
-// import {BrowserRouter as Router, Route} from 'react-router-dom'
-// import App from './App'
+import Home from '../views/Home/Home'
+import FreePage from '../views/Pages/FreePage'
+import ProPage from '../views/Pages/ProPage'
+import OurAppPage from '../views/Pages/OurAppPage'
 
 class Root extends Component {
     constructor() {
@@ -28,11 +29,10 @@ class Root extends Component {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route path="/free" component={Free}/>
-                        <Route path="/pro" component={Pro}/>
-                        <Route path="/our-app" component={OurApp}/>
-                        <Route path="/beta" component={Search}/>
-                        <Route path="/watch/:id" component={Watch} />
+                        <Route path="/free" component={FreePage}/>
+                        <Route path="/pro" component={ProPage}/>
+                        <Route path="/our-app" component={OurAppPage}/>
+                        <Route path="/watch/:id" component={Watch}/>
                     </Switch>
                 </Router>
             </Provider>

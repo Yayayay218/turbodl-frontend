@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import VideoCard from '../../../components/Card/VideoCard'
 
 export const SearchList = ({items}) => {
     return (
@@ -7,21 +7,12 @@ export const SearchList = ({items}) => {
             {items.map((item, key) => {
                 const {snippet} = item
                 return (
-                    <Link key={key} className="row search-container"
-                          to={{
-                            pathname: `/watch/${item.id.videoId}`
-                          }}
-                    >
-                        <div className="col-md-4 thumbnail">
-                            <img src={snippet.thumbnails.high.url} alt=""/>
-                        </div>
-                        <div className="col-md-8">
-                            <p className="video-title">{snippet.title}</p>
-                        </div>
-                        <div className="col-12">
-                            <div className="line"></div>
-                        </div>
-                    </Link>
+                    <VideoCard
+                        key={key}
+                        videoId={item.id.videoId}
+                        thumbnail={snippet.thumbnails.high.url}
+                        title={snippet.title}
+                    />
                 )
             })}
         </div>

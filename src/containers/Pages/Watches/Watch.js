@@ -7,15 +7,33 @@ class Watch extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            isIFrameOpen: false,
+            link: ''
+        }
+
+
         const {id} = props.match.params
         this.props.dispatch(Actions.postUrl({url: id}))
     }
 
+    handleIFrameOpen = (url) => () => {
+        console.log(url)
+        this.setState({isIFrameOpen: true, link: url})
+    }
+
     render() {
         const {livestreams, isPosting, isPosted} = this.props
-        let tmp = livestreams.formats
+        const {isIFrameOpen, link} = this.state
         if (isPosting)
             return <div className="loading">Loading&#8230;</div>
+        if (isIFrameOpen)
+            return <div className="container">
+                <div className="embed-responsive embed-responsive-16by9">
+                    <iframe className="embed-responsive-item" src={link}
+                            allowFullScreen></iframe>
+                </div>
+            </div>
         return (
             <div className="container">
                 {
@@ -27,12 +45,19 @@ class Watch extends Component {
                         {
                             livestreams.formats.map((item, key) => {
                                 return (
-                                    <li key={key} className="list-group-item">
-                                        <a href={item.url}>
-                                            {item.ext} | {item.format_note} {
-                                            item.format_note === '1080p' && '(Muted)'
-                                        }
-                                        </a>
+                                    <li key={key} className="list-group-item"
+                                        style={{cursor: 'pointer'}}
+                                        onClick={this.handleIFrameOpen(item.url)}
+                                    >
+                                        {item.ext} | {item.format_note} {
+                                        item.format_note === '1080p' && '(Muted)'}
+                                        {/*<a download={livestreams.fulltitle + '.' + item.ext}*/}
+                                        {/*href={item.url}>*/}
+                                        {/*{item.ext} | {item.format_note} {*/}
+                                        {/*item.format_note === '1080p' && '(Muted)'*/}
+                                        {/*}*/}
+                                        {/*</a>*/}
+
                                     </li>
                                 )
                             })

@@ -17,7 +17,8 @@ class SaveFrom extends Component {
                 'https://www.youtube.com/watch?v=IEkyWhvS1mA',
                 'https://www.youtube.com/watch?v=LLoyNxjhTzc',
                 'https://www.youtube.com/watch?v=ZbZSe6N_BXs'
-            ]
+            ],
+            match: true
         }
         this.doPost = this.doPost.bind(this)
         this.doSearch = this.doSearch.bind(this)
@@ -37,6 +38,10 @@ class SaveFrom extends Component {
         this.props.dispatch(Actions.search(data))
     }
 
+    doNoMatch = () => {
+        this.setState({match: false})
+    }
+
     componentWillUpdate(newProps, newState) {
         // if (this.state.url !== newState.url && newState.url !== '') {
         //     this.props.dispatch(Actions.postUrl(newState))
@@ -49,17 +54,8 @@ class SaveFrom extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    {/*<div className="col-md-8 col-12 turbo-logo">*/}
-                        {/*<div style={{textAlign: 'center'}}>*/}
-                            {/*<img src={Logo} className="logo"/>*/}
-                            {/*<img src={Turbodl} className="txt-turbo"/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
 
                     <div className="col-md-8 col-12">
-                        {/*<p className="download-intro">Enter URL of video page here and*/}
-                            {/*<br/>*/}
-                            {/*press “Download”</p>*/}
                         <div className="download-wrapper _2">
                             <div className="input-group">
                                 {
@@ -75,25 +71,10 @@ class SaveFrom extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.doSearch}
+                                    onClick={this.props.isAuthenticated ? this.doSearch : this.doNoMatch}
                             >DOWNLOAD</button>
                           </span>
                             </div>
-                            {/*<p className="example-link">*/}
-                            {/*Example:&nbsp;*/}
-                            {/*<ReactCSSTransitionGroup*/}
-                            {/*transitionName="example"*/}
-                            {/*transitionEnterTimeout={500}*/}
-                            {/*transitionLeaveTimeout={300}*/}
-                            {/*>*/}
-                            {/*<a*/}
-                            {/*key={this.state.count}*/}
-                            {/*onClick={(e) => this.setState({url: this.state.demoUrl})}*/}
-                            {/*>*/}
-                            {/*{this.state.demoUrl}</a>*/}
-                            {/*</ReactCSSTransitionGroup>*/}
-
-                            {/*</p>*/}
                         </div>
                     </div>
                 </div>
@@ -115,28 +96,7 @@ class SaveFrom extends Component {
                         </div>
                         <Link to={{pathname: `/watch/${searches[0].id.videoId}`}} className="col-md-4 col-6 no-padding-left">
                             <p className="title">{searches[0].snippet.title}</p>
-                            {/*<p className="duration">{livestreams.duration}</p>*/}
                         </Link>
-                        {/*<div className="col-md-8 col-12">*/}
-                            {/*<div className="dropdown">*/}
-                                {/*<button type="button" className="btn btn-dropdown dropdown-toggle"*/}
-                                        {/*data-toggle="dropdown"*/}
-                                        {/*aria-haspopup="true" aria-expanded="false"*/}
-                                {/*>*/}
-                                    {/*Select video quality to download*/}
-                                {/*</button>*/}
-                                {/*<div className="dropdown-menu">*/}
-                                    {/*{*/}
-                                        {/*livestreams.formats.map((item, key) => (*/}
-                                            {/*<a className="dropdown-item" href={item.url} download*/}
-                                               {/*key={key}>{item.ext} {item.format_note} {*/}
-                                                {/*item.format_note === '1080p' && '(Muted)'*/}
-                                            {/*}</a>*/}
-                                        {/*))*/}
-                                    {/*}*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
                         <div className="col-12" style={{height: '50px'}}></div>
                     </div>
                 }

@@ -11,36 +11,6 @@ export default class Parse {
         this.API_BASE_URL = !root ? config.URL: '';
     }
 
-    getMatches(data) {
-        var query = '';
-        if (data.id !== null)
-            query = `_id=${data.id}`;
-        else
-            query = `type=${data.type}`;
-        return this._fetch({
-            method: 'GET',
-            url: '/matches?' + query + '&sort=-createdAt',
-        }).then(response => response.json());
-    }
-
-    getLivestreams(data) {
-        var query = '';
-        if (data.id !== null)
-            query = `id=${data.id}`;
-        else query = 'status=2'
-        return this._fetch({
-            method: 'GET',
-            url: '/livestreams?' + query + '&sort=-createdAt',
-        }).then(response => response.json());
-    }
-
-    getChannel(data) {
-        return this._fetch({
-            method: 'GET',
-            url: '/livestreams/' + data.id + '/' + data.channelId,
-        }).then(response => response.json());
-    }
-
     postUrl(data) {
         return this._fetch({
             method: 'POST',
@@ -49,10 +19,10 @@ export default class Parse {
         }).then(response => response.json());
     }
 
-    search({q, maxResults}) {
+    search({q, maxResults, pageToken}) {
         return this._fetch({
             method: 'GET',
-            url: `https://www.googleapis.com/youtube/v3/search?${q}&part=snippet&${maxResults}&key=${config.SECRET_KEY}&type=video`,
+            url: `https://www.googleapis.com/youtube/v3/search?${q}&part=snippet&${maxResults}&key=${config.SECRET_KEY}&type=video&${pageToken}`,
         }).then(response => response.json());
     }
 

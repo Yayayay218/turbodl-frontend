@@ -9,6 +9,7 @@
     "node-less-chokidar": "latest",
     "npm-run-all": "latest",
     "prop-types": "latest",
+    "query-string": "^6.0.0",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

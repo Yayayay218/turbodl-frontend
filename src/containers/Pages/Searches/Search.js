@@ -7,15 +7,36 @@ class Search extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           url: ''
+            url: '',
+            match: true
         }
         this.doSearch = this.doSearch.bind(this)
+        this.doLoadMore = this.doLoadMore.bind(this)
     }
 
     doSearch() {
         let data = {
             q: `q=${this.state.url}`,
-            maxResults: `maxResults=10`
+            maxResults: `maxResults=10`,
+            loadMore: false
+        }
+        this.props.dispatch(Actions.search(data))
+    }
+
+    doNoMatch = () => {
+        this.setState({match: false})
+    }
+
+    doClearUrl = () => {
+        this.setState({url: ''})
+    }
+
+    doLoadMore() {
+        let data = {
+            q: `q=${this.state.url}`,
+            maxResults: `maxResults=10`,
+            pageToken: `pageToken=${this.props.nextPage}`,
+            loadMore: true
         }
         this.props.dispatch(Actions.search(data))
     }
@@ -28,23 +49,13 @@ class Search extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    {/*<div className="col-md-8 col-12 turbo-logo">*/}
-                        {/*<div style={{textAlign: 'center'}}>*/}
-                            {/*<img src={Logo} className="logo"/>*/}
-                            {/*<img src={Turbodl} className="txt-turbo"/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-
                     <div className="col-md-8 col-12">
-                        {/*<p className="download-intro">Enter URL of video page here and*/}
-                            {/*<br/>*/}
-                            {/*press “Download”</p>*/}
                         <div className="download-wrapper _1">
                             <div className="input-group">
                                 {
                                     this.state.url !== '' &&
                                     <span className="close-icon"
-                                          onClick={() => this.setState({url: ''})}
+                                          onClick={this.doClearUrl}
                                     ></span>
 
                                 }
@@ -54,16 +65,30 @@ class Search extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.doSearch}
+                                    onClick={this.props.isAuthenticated ? this.doSearch : this.doNoMatch}
                             >SEARCH</button>
                           </span>
                             </div>
                         </div>
+                        <p style={{fontWeight: 'bold', marginTop: '10px'}}><i>For example: “Shape of you”
+                        </i></p>
                     </div>
                     <div className="col-md-8 col-12">
                         <SearchList
                             items={searches}
                         />
+                    </div>
+                    <div className="col-md-8 col-12" style={{textAlign: 'center'}}>
+                        {
+                            this.props.searches.length !== 0 &&
+                            <button className="btn btn-primary"
+                                    style={{marginTop: '20px', marginBottom: '50px'}}
+                                    onClick={this.doLoadMore}
+                            >
+                                Load More
+                            </button>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -75,7 +100,8 @@ const mapStateToProps = (state) => {
     return {
         searches: state.searches.data,
         error: state.searches.errCode,
-        fetched: state.searches.fetched
+        fetched: state.searches.fetched,
+        nextPage: state.searches.nextPage
     }
 };
 

@@ -1,17 +1,13 @@
-import { takeLatest, all, fork } from 'redux-saga/effects';
+import {takeLatest, all, fork} from 'redux-saga/effects';
 import Types from '../actions/Types';
 
 import {
-    getMatches,
-    getLivestreams,
-    getChannel, postUrl, search
+    postUrl,
+    search
 } from "./MatchSaga"
 
-export default function * root () {
+export default function* root() {
     yield all([
-        takeLatest(Types.GET_MATCHES, getMatches),
-        takeLatest(Types.GET_LIVESTREAM, getLivestreams),
-        takeLatest(Types.GET_CHANNEL, getChannel),
         takeLatest(Types.POST_URL, postUrl),
         takeLatest(Types.SEARCH, search)
     ])
