@@ -1,4 +1,4 @@
-import {takeLatest, all, fork} from 'redux-saga/effects';
+import {takeLatest, all} from 'redux-saga/effects';
 import Types from '../actions/Types';
 
 import {

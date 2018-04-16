@@ -1,4 +1,4 @@
-import {take, call, put, select} from 'redux-saga/effects';
+import {call, put} from 'redux-saga/effects';
 import Actions from '../actions/Creators'
 import Api from '../services/dataService'
 

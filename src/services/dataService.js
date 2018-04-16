@@ -26,6 +26,14 @@ export default class Parse {
         }).then(response => response.json());
     }
 
+    searchAnother(data) {
+        return this._fetch({
+            method: 'POST',
+            url: '/videos/another',
+            body: data
+        }).then(response => response.json());
+    }
+
     _fetch(opts) {
         opts = _.extend({
             method: 'GET',

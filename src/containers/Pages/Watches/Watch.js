@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import Actions from '../../../actions/Creators'
-import {WatchLoading} from "./WatchLoading";
 
 class Watch extends Component {
     constructor(props) {
@@ -18,7 +17,6 @@ class Watch extends Component {
     }
 
     handleIFrameOpen = (url) => () => {
-        console.log(url)
         this.setState({isIFrameOpen: true, link: url})
     }
 
@@ -51,13 +49,6 @@ class Watch extends Component {
                                     >
                                         {item.ext} | {item.format_note} {
                                         item.format_note === '1080p' && '(Muted)'}
-                                        {/*<a download={livestreams.fulltitle + '.' + item.ext}*/}
-                                        {/*href={item.url}>*/}
-                                        {/*{item.ext} | {item.format_note} {*/}
-                                        {/*item.format_note === '1080p' && '(Muted)'*/}
-                                        {/*}*/}
-                                        {/*</a>*/}
-
                                     </li>
                                 )
                             })

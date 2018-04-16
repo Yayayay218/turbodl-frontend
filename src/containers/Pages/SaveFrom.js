@@ -3,34 +3,46 @@ import {connect} from 'react-redux';
 import Actions from '../../actions/Creators'
 import Spinner from 'react-spinkit'
 import {Link} from 'react-router-dom'
-
+import Api from '../../services/dataService'
+import VideoUrlCard from '../../components/Card/VideoUrlCard'
 
 class SaveFrom extends Component {
     constructor(props) {
         super(props)
         this.state = {
             url: '',
-            demoUrl: 'https://www.youtube.com/watch?v=HCjNJDNzw8Y',
-            count: 1,
-            tmpUrl: [
-                'https://www.youtube.com/watch?v=HCjNJDNzw8Y',
-                'https://www.youtube.com/watch?v=IEkyWhvS1mA',
-                'https://www.youtube.com/watch?v=LLoyNxjhTzc',
-                'https://www.youtube.com/watch?v=ZbZSe6N_BXs'
-            ],
-            match: true
+            match: true,
+            isLoading: false,
+            video: null,
+            isIFrameOpen: false,
+            link: ''
         }
-        this.doPost = this.doPost.bind(this)
+        this.doSearchAnother = this.doSearchAnother.bind(this)
         this.doSearch = this.doSearch.bind(this)
-        // this.onUnload = this.onUnload.bind(this)
     }
 
-    doPost() {
-        //
-        this.props.dispatch(Actions.postUrl(this.state))
+    isYoutubeUrl(url) {
+        let isYouTubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//;
+        return isYouTubeRegex.test(url)
+    }
+
+    doSearchAnother() {
+        // console.log(this.isYoutubeUrl(this.state.url))
+        console.log('a')
+        this.setState({isLoading: true})
+        const ParseApi = new Api(null);
+        ParseApi.searchAnother(this.state)
+            .then(res => {
+                this.setState({
+                    isLoading: false,
+                    video: res.data
+                })
+            })
+            .catch(err => console.log(err))
     }
 
     doSearch() {
+        this.setState({video: null})
         let data = {
             q: `q=${this.state.url}`,
             maxResults: `maxResults=10`
@@ -42,6 +54,10 @@ class SaveFrom extends Component {
         this.setState({match: false})
     }
 
+    handleIFrameOpen = (url) => () => {
+        this.setState({isIFrameOpen: true, link: url})
+    }
+
     componentWillUpdate(newProps, newState) {
         // if (this.state.url !== newState.url && newState.url !== '') {
         //     this.props.dispatch(Actions.postUrl(newState))
@@ -49,8 +65,17 @@ class SaveFrom extends Component {
     }
 
     render() {
-        // console.log(this.state.count)
-        const {isPosted, livestreams, isPosting, err, fetched, searches} = this.props
+        const {err, fetched, searches} = this.props
+        const {video, isIFrameOpen, link} = this.state
+
+        if (isIFrameOpen)
+            return <div className="container">
+                <div className="embed-responsive embed-responsive-16by9">
+                    <iframe className="embed-responsive-item" src={link}
+                            allowFullScreen></iframe>
+                </div>
+            </div>
+
         return (
             <div className="container">
                 <div className="row justify-content-center">
@@ -71,7 +96,7 @@ class SaveFrom extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.props.isAuthenticated ? this.doSearch : this.doNoMatch}
+                                    onClick={this.props.isAuthenticated ? this.isYoutubeUrl(this.state.url) ? this.doSearch : this.doSearchAnother : this.doNoMatch}
                             >DOWNLOAD</button>
                           </span>
                             </div>
@@ -79,7 +104,8 @@ class SaveFrom extends Component {
                     </div>
                 </div>
                 {
-                    isPosting && <div className="d-flex justify-content-center" style={{marginTop: '25px'}}><Spinner
+                    this.state.isLoading &&
+                    <div className="d-flex justify-content-center" style={{marginTop: '25px'}}><Spinner
                         name="three-bounce"/></div>
                 }
                 {
@@ -87,16 +113,37 @@ class SaveFrom extends Component {
                     <p style={{textAlign: 'center', marginTop: '15px', color: 'red', fontSize: '14px'}}>Invalid URL</p>
                 }
                 {
-                    fetched &&
-                    <div className="row justify-content-center" style={{marginTop: '25px', marginBottom: '10px'}}>
-                        <div className="col-md-4 col-6">
-                            <div className="thumb-box">
-                                <img src={searches[0].snippet.thumbnails.high.url} alt=""/>
-                            </div>
-                        </div>
-                        <Link to={{pathname: `/watch/${searches[0].id.videoId}`}} className="col-md-4 col-6 no-padding-left">
-                            <p className="title">{searches[0].snippet.title}</p>
-                        </Link>
+                    (fetched && !video) &&
+                    <VideoUrlCard
+                        videoId={searches[0].id.videoId}
+                        title={searches[0].snippet.title}
+                        thumbnail={searches[0].snippet.thumbnails.high.url}
+                        clickAble={true}
+                    />
+
+                }
+                {
+                    video &&
+                    <div>
+                        <VideoUrlCard
+                            title={video.fulltitle}
+                            thumbnail={video.thumbnail}
+                            clickAble={false}
+                        />
+                        <ul className="list-group">
+                            {
+                                video.formats.map((item, key) => {
+                                    return (
+                                        <li key={key} className="list-group-item"
+                                            style={{cursor: 'pointer'}}
+                                            onClick={this.handleIFrameOpen(item.url)}
+                                        >
+                                            {item.format} | {item.ext}
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
                         <div className="col-12" style={{height: '50px'}}></div>
                     </div>
                 }
@@ -107,11 +154,7 @@ class SaveFrom extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        livestreams: state.livestreams.data,
-        isPosted: state.livestreams.urlPosted,
-        isPosting: state.livestreams.urlPosting,
         searches: state.searches.data,
-        error: state.searches.errCode,
         fetched: state.searches.fetched
     }
 };
