@@ -12,38 +12,36 @@ class Home extends Component {
         this.state = {
             initStepIndex: 0,
         }
-        this.onUnload = this.onUnload.bind(this)
-        const parsed = qs.parse(props.location.search);
-        if (parsed.token === 'e9adebad-a22b-4de8-b13b-d18ce2624e4d')
-            this.props.dispatch(Actions.authenticated())
+        // this.onUnload = this.onUnload.bind(this)
+        // const parsed = qs.parse(props.location.search);
+        // if (parsed.token === 'e9adebad-a22b-4de8-b13b-d18ce2624e4d')
+        //     this.props.dispatch(Actions.authenticated())
     }
 
-    componentDidMount() {
-        window.addEventListener("beforeunload", this.onUnload)
-        this.props.history.replace('/')
-    }
-
-    onUnload(event) { // the method that will be used for both add and remove event
-        localStorage.removeItem("reduxPersist:authenticated")
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("beforeunload", this.onUnload)
-    }
+    // componentDidMount() {
+    //     window.addEventListener("beforeunload", this.onUnload)
+    //     this.props.history.replace('/')
+    // }
+    //
+    // onUnload(event) { // the method that will be used for both add and remove event
+    //     localStorage.removeItem("reduxPersist:authenticated")
+    // }
+    //
+    // componentWillUnmount() {
+    //     window.removeEventListener("beforeunload", this.onUnload)
+    // }
 
     render() {
         const steps = [
             {
                 render: () => (
                     <Search
-                        isAuthenticated={this.props.isAuthenticated}
                     />
                 )
             },
             {
                 render: () => (
                     <Url
-                        isAuthenticated={this.props.isAuthenticated}
                     />
                 )
             }
@@ -52,7 +50,6 @@ class Home extends Component {
             <HomeWizard
                 steps={steps}
                 initStepIndex={this.state.initStepIndex}
-                isAuthenticated={this.props.isAuthenticated}
             />
         )
     }
@@ -60,8 +57,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthenticated: state.authenticated.isAuthenticated,
-        isFetched: state.authenticated.isFetched
+        // isAuthenticated: state.authenticated.isAuthenticated,
+        // isFetched: state.authenticated.isFetched
     }
 };
 

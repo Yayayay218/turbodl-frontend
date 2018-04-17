@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Logo from '../../assets/images/turbodl-new.svg'
-import Turbodl from '../../assets/images/turbodl-net.svg'
+import Turbodl from '../../assets/images/videodl-net.svg'
 
 class HomeWizard extends Component {
     constructor(props) {

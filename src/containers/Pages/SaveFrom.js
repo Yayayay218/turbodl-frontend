@@ -28,7 +28,6 @@ class SaveFrom extends Component {
 
     doSearchAnother() {
         // console.log(this.isYoutubeUrl(this.state.url))
-        console.log('a')
         this.setState({isLoading: true})
         const ParseApi = new Api(null);
         ParseApi.searchAnother(this.state)
@@ -96,11 +95,12 @@ class SaveFrom extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.props.isAuthenticated ? this.isYoutubeUrl(this.state.url) ? this.doSearch : this.doSearchAnother : this.doNoMatch}
+                                    onClick={this.isYoutubeUrl(this.state.url) ? this.doSearch : this.doSearchAnother}
                             >DOWNLOAD</button>
                           </span>
                             </div>
                         </div>
+                        <p style={{marginTop: '15px'}}>Currently support: Youtube, xnxx, xvideos</p>
                     </div>
                 </div>
                 {
