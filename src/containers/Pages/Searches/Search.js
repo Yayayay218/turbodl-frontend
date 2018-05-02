@@ -66,12 +66,12 @@ class Search extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.doSearch}
+                                    onClick={this.props.isAuthenticated ? this.doSearch : this.doNoMatch}
                             >SEARCH</button>
                           </span>
                             </div>
                         </div>
-                        <p style={{fontWeight: 'bold', marginTop: '10px'}}><i>For example: “Despacito”
+                        <p style={{marginTop: '10px'}}><i>For example: “Despacito”
                         </i></p>
                     </div>
                     <div className="col-md-8 col-12">

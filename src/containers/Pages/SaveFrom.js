@@ -95,7 +95,7 @@ class SaveFrom extends Component {
                                 />
                                 <span className="input-group-btn">
                             <button className="btn btn-search" type="button"
-                                    onClick={this.isYoutubeUrl(this.state.url) ? this.doSearch : this.doSearchAnother}
+                                    onClick={this.props.isAuthenticated ? this.isYoutubeUrl(this.state.url) ? this.doSearch : this.doSearchAnother : this.doNoMatch}
                             >DOWNLOAD</button>
                           </span>
                             </div>
